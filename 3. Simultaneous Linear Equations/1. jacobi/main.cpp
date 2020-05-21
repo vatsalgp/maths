@@ -1,26 +1,43 @@
 #include <iostream>
 #include <iomanip>
 #include <math.h>
-#include <array>
 
 using namespace std;
 
-int pres(float f1, float f2, int p)
+const int precision = 3;
+
+class Values
 {
-    f1 *= pow(10, p);
-    f2 *= pow(10, p);
+public:
+    float x, y, z;
+    Values(float x = 0, float y = 0, float z = 0)
+    {
+        this->x = x;
+        this->y = y;
+        this->z = z;
+    }
+};
+
+bool precisionCheck(float f1, float f2)
+{
+    f1 *= pow(10, precision);
+    f2 *= pow(10, precision);
     return (int)f1 == (int)f2;
 }
 
-void info()
+bool precisionValues(Values a, Values b)
+{
+    return precisionCheck(a.x, b.x) && precisionCheck(a.y, b.y) && precisionCheck(a.z, b.z);
+}
+
+void printInfo()
 {
     cout << "Vatsal Gupta" << endl;
     cout << "4th Sem" << endl;
-    cout << "03520803118" << endl
-         << endl;
+    cout << "03520803118" << endl;
 }
 
-array<float, 3> f(array<float, 3> x)
+Values func(Values current)
 {
     /*Equations are : 
         20x + y - 2z = 17
@@ -32,36 +49,41 @@ array<float, 3> f(array<float, 3> x)
         y = (-18 - 3x + z) / 20
         z = (25 - 2x + 3y) / 20  
     */
-    float a = (17 - x[1] + 2 * x[2]) / 20;
-    float b = (-18 - 3 * x[0] + x[2]) / 20;
-    float c = (25 - 2 * x[0] + 3 * x[1]) / 20;
-    array<float, 3> ans = {a, b, c};
+    float x = (17 - current.y + 2 * current.z) / 20;
+    float y = (-18 - 3 * current.x + current.z) / 20;
+    float z = (25 - 2 * current.x + 3 * current.y) / 20;
+    Values ans(x, y, z);
     return ans;
+}
+
+void printSolution(Values ans)
+{
+    cout << "The solution of the equations " << endl
+         << endl;
+    cout << "20x + y - 2z = 17" << endl;
+    cout << "3x + 20y - z = -18" << endl;
+    cout << "2x - 3y + 20z = 25" << endl;
+    cout << endl
+         << "using Jacobi Method is " << endl
+         << endl;
+    cout << "x = ";
+    cout << fixed << setprecision(precision) << ans.x << endl;
+    cout << "y = ";
+    cout << fixed << setprecision(precision) << ans.y << endl;
+    cout << "z = ";
+    cout << fixed << setprecision(precision) << ans.z << endl;
 }
 
 int main()
 {
-    int p = 3;
+    Values prev, next;
 
-    array<float, 3> next = {0}, prev = {0};
     do
     {
-        prev[0] = next[0];
-        prev[1] = next[1];
-        prev[2] = next[2];
+        prev = next;
+        next = func(next);
 
-        next = f(prev);
+    } while (!precisionValues(prev, next));
 
-    } while (!pres(next[0], prev[0], p));
-    cout << "The solution of the equations \n \n";
-    cout << "20x + y - 2z = 17" << endl;
-    cout << "3x + 20y - z = -18" << endl;
-    cout << "2x - 3y + 20z = 25" << endl;
-    cout << "\nusing Jacobi Method is \n \n";
-    cout << "x = ";
-    cout << fixed << setprecision(p) << next[0] << endl;
-    cout << "y = ";
-    cout << fixed << setprecision(p) << next[1] << endl;
-    cout << "z = ";
-    cout << fixed << setprecision(p) << next[2] << endl;
+    printSolution(next);
 }
