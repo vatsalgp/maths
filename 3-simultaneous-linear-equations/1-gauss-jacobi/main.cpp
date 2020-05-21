@@ -32,17 +32,6 @@ bool precisionValues(Values a, Values b)
 
 Values func(Values current)
 {
-    /*Equations are : 
-        20x + y - 2z = 17
-        3x + 20y - z = -18
-        2x - 3y + 20z = 25
-
-        which form:
-        x = (17 - y + 2z ) / 20
-        y = (-18 - 3x + z) / 20
-        z = (25 - 2x + 3y) / 20  
-    */
-
     float x = (17 - current.y + 2 * current.z) / 20;
     float y = (-18 - 3 * current.x + current.z) / 20;
     float z = (25 - 2 * current.x + 3 * current.y) / 20;
