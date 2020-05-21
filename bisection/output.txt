@@ -1,0 +1,10 @@
+Vatsal Gupta
+4th Sem
+03520803118
+
+a = 2.09424
+b = 2.09473
+f(x) = -0.00349515
+
+The solution of the equation x^3 - 2x - 5 = 0 using bisection method is
+x = 2.094

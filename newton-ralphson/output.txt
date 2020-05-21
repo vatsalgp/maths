@@ -1,0 +1,6 @@
+Vatsal Gupta
+4th Sem
+03520803118
+
+The solution of the equation x^3 - 2x - 5 = 0 using Newton Ralphson method is
+x = 2.095

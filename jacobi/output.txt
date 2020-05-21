@@ -1,0 +1,11 @@
+The solution of the equations 
+ 
+20x + y - 2z = 17
+3x + 20y - z = -18
+2x - 3y + 20z = 25
+
+using Jacobi Method is 
+ 
+x = 1.000
+y = -1.000
+z = 1.000
