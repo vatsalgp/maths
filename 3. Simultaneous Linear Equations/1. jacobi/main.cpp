@@ -49,9 +49,11 @@ Values func(Values current)
         y = (-18 - 3x + z) / 20
         z = (25 - 2x + 3y) / 20  
     */
+
     float x = (17 - current.y + 2 * current.z) / 20;
     float y = (-18 - 3 * current.x + current.z) / 20;
     float z = (25 - 2 * current.x + 3 * current.y) / 20;
+
     Values ans(x, y, z);
     return ans;
 }
