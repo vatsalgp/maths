@@ -14,14 +14,14 @@ float fd(float x)
 	return (3 * pow(x, 2) - 2);
 }
 
-int pres(float f1, float f2, int p)
+int precision(float f1, float f2, int precision)
 {
-	f1 *= pow(10, p);
-	f2 *= pow(10, p);
+	f1 *= pow(10, precision);
+	f2 *= pow(10, precision);
 	return (int)f1 == (int)f2;
 }
 
-void info()
+void printInfo()
 {
 	cout << "Vatsal Gupta" << endl;
 	cout << "4th Sem" << endl;
@@ -31,19 +31,19 @@ void info()
 
 int main()
 {
-	int p = 3;
+	int precision = 3;
 	float next = 0, prev = 0;
 	do
 	{
 		prev = next;
 		next = prev - f(prev) / fd(prev);
 
-	} while (!pres(next, prev, p));
+	} while (!precision(next, prev, precision));
 
-	info();
+	printInfo();
 
 	cout << "The solution of the equation ";
 	cout << "x^3 - 2x - 5 = 0 using Newton Ralphson method is" << endl;
 	cout << "x = ";
-	cout << fixed << setprecision(p) << next << endl;
+	cout << fixed << setprecision(precision) << next << endl;
 }

@@ -5,14 +5,14 @@
 
 using namespace std;
 
-int pres(float f1, float f2, int p)
+int precision(float f1, float f2, int precision)
 {
-    f1 *= pow(10, p);
-    f2 *= pow(10, p);
+    f1 *= pow(10, precision);
+    f2 *= pow(10, precision);
     return (int)f1 == (int)f2;
 }
 
-void info()
+void printInfo()
 {
     cout << "Vatsal Gupta" << endl;
     cout << "4th Sem" << endl;
@@ -41,7 +41,7 @@ array<float, 3> f(array<float, 3> x)
 
 int main()
 {
-    int p = 3;
+    int precision = 3;
 
     array<float, 3> next = {0}, prev = {0};
     do
@@ -52,16 +52,16 @@ int main()
 
         next = f(prev);
 
-    } while (!pres(next[0], prev[0], p));
+    } while (!precision(next[0], prev[0], precision));
     cout << "The solution of the equations \n \n";
     cout << "20x + y - 2z = 17" << endl;
     cout << "3x + 20y - z = -18" << endl;
     cout << "2x - 3y + 20z = 25" << endl;
     cout << "\nusing Seidel Method is \n \n";
     cout << "x = ";
-    cout << fixed << setprecision(p) << next[0] << endl;
+    cout << fixed << setprecision(precision) << next[0] << endl;
     cout << "y = ";
-    cout << fixed << setprecision(p) << next[1] << endl;
+    cout << fixed << setprecision(precision) << next[1] << endl;
     cout << "z = ";
-    cout << fixed << setprecision(p) << next[2] << endl;
+    cout << fixed << setprecision(precision) << next[2] << endl;
 }

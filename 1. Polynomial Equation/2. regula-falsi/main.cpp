@@ -9,7 +9,7 @@ float func(float x)
 	return (pow(x, 3) - 2 * x - 5);
 }
 
-void info()
+void printInfo()
 {
 	cout << "Vatsal Gupta" << endl;
 	cout << "4th Sem" << endl;
@@ -19,7 +19,7 @@ void info()
 
 int main()
 {
-	int p = 3;
+	int precision = 3;
 	float a = 2, b = 3, c = 3;
 	for (int i = 0; i < 100; i++)
 	{
@@ -31,7 +31,7 @@ int main()
 			a = c;
 	}
 
-	info();
+	printInfo();
 
 	cout << "a = " << a << endl;
 	cout << "b = " << b << endl;
@@ -41,5 +41,5 @@ int main()
 	cout << "The solution of the equation ";
 	cout << "x^3 - 2x - 5 = 0 using Regula Falsi method is" << endl;
 	cout << "x = ";
-	cout << fixed << setprecision(p) << a << endl;
+	cout << fixed << setprecision(precision) << a << endl;
 }

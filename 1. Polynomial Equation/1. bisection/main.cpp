@@ -4,10 +4,10 @@
 
 using namespace std;
 
-int pres(float f1, float f2, int p)
+int precision(float f1, float f2, int precision)
 {
-	f1 *= pow(10, p);
-	f2 *= pow(10, p);
+	f1 *= pow(10, precision);
+	f2 *= pow(10, precision);
 	return (int)f1 == (int)f2;
 }
 
@@ -16,7 +16,7 @@ float func(float x)
 	return (pow(x, 3) - 2 * x - 5);
 }
 
-void info()
+void printInfo()
 {
 	cout << "Vatsal Gupta" << endl;
 	cout << "4th Sem" << endl;
@@ -26,10 +26,10 @@ void info()
 
 int main()
 {
-	int p = 3;
+	int precision = 3;
 	//int steps = 0;
 	float a = 2, b = 3, c;
-	while (!pres(a, b, p))
+	while (!precision(a, b, precision))
 	{
 		//steps++;
 		c = (a + b) / 2;
@@ -40,7 +40,7 @@ int main()
 		// cout << a << " " << b << endl;
 	}
 
-	info();
+	printInfo();
 
 	cout << "a = " << a << endl;
 	cout << "b = " << b << endl;
@@ -50,5 +50,5 @@ int main()
 	cout << "The solution of the equation ";
 	cout << "x^3 - 2x - 5 = 0 using bisection method is" << endl;
 	cout << "x = ";
-	cout << fixed << setprecision(p) << a << endl;
+	cout << fixed << setprecision(precision) << a << endl;
 }
