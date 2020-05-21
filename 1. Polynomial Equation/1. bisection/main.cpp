@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int precision(float f1, float f2, int precision)
+int precisionCheck(float f1, float f2, int precision)
 {
 	f1 *= pow(10, precision);
 	f2 *= pow(10, precision);
