@@ -1,1 +1,1 @@
-# It is used to find the real roots of a polynomial equation.
+# These are used to find the real roots of a polynomial equation.
