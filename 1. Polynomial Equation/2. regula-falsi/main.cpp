@@ -4,6 +4,8 @@
 
 using namespace std;
 
+const int precision = 3;
+
 float func(float x)
 {
 	return (pow(x, 3) - 2 * x - 5);
@@ -17,20 +19,8 @@ void printInfo()
 		 << endl;
 }
 
-int main()
+void printSolution(float a, float b)
 {
-	int precision = 3;
-	float a = 2, b = 3, c = 3;
-	for (int i = 0; i < 100; i++)
-	{
-		c = a - func(a) * (b - a) / (func(b) - func(a));
-
-		if (func(c) * func(a) < 0)
-			b = c;
-		else
-			a = c;
-	}
-
 	printInfo();
 
 	cout << "a = " << a << endl;
@@ -42,4 +32,20 @@ int main()
 	cout << "x^3 - 2x - 5 = 0 using Regula Falsi method is" << endl;
 	cout << "x = ";
 	cout << fixed << setprecision(precision) << a << endl;
+}
+
+int main()
+{
+	float a = 2, b = 3, c = 3;
+	for (int i = 0; i < 100; i++)
+	{
+		c = a - func(a) * (b - a) / (func(b) - func(a));
+
+		if (func(c) * func(a) < 0)
+			b = c;
+		else
+			a = c;
+	}
+
+	printSolution(a, b);
 }

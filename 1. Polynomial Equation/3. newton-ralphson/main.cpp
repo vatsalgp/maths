@@ -4,17 +4,19 @@
 
 using namespace std;
 
-float f(float x)
+const int precision = 3;
+
+float func(float x)
 {
 	return (pow(x, 3) - 2 * x - 5);
 }
 
-float fd(float x)
+float funcD(float x)
 {
 	return (3 * pow(x, 2) - 2);
 }
 
-int precisionCheck(float f1, float f2, int precision)
+int precisionCheck(float f1, float f2)
 {
 	f1 *= pow(10, precision);
 	f2 *= pow(10, precision);
@@ -31,14 +33,14 @@ void printInfo()
 
 int main()
 {
-	int precision = 3;
 	float next = 0, prev = 0;
+
 	do
 	{
 		prev = next;
-		next = prev - f(prev) / fd(prev);
+		next = prev - func(prev) / funcD(prev);
 
-	} while (!precision(next, prev, precision));
+	} while (!precisionCheck(next, prev));
 
 	printInfo();
 
