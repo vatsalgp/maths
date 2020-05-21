@@ -23,12 +23,12 @@ int precisionCheck(float f1, float f2)
 	return (int)f1 == (int)f2;
 }
 
-void printInfo()
+void printSolution(float ans)
 {
-	cout << "Vatsal Gupta" << endl;
-	cout << "4th Sem" << endl;
-	cout << "03520803118" << endl
-		 << endl;
+	cout << "The solution of the equation ";
+	cout << "x^3 - 2x - 5 = 0 using Newton Ralphson method is" << endl;
+	cout << "x = ";
+	cout << fixed << setprecision(precision) << ans << endl;
 }
 
 int main()
@@ -42,10 +42,5 @@ int main()
 
 	} while (!precisionCheck(next, prev));
 
-	printInfo();
-
-	cout << "The solution of the equation ";
-	cout << "x^3 - 2x - 5 = 0 using Newton Ralphson method is" << endl;
-	cout << "x = ";
-	cout << fixed << setprecision(precision) << next << endl;
+	printSolution(next);
 }

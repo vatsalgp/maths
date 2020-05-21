@@ -30,13 +30,6 @@ bool precisionValues(Values a, Values b)
     return precisionCheck(a.x, b.x) && precisionCheck(a.y, b.y) && precisionCheck(a.z, b.z);
 }
 
-void printInfo()
-{
-    cout << "Vatsal Gupta" << endl;
-    cout << "4th Sem" << endl;
-    cout << "03520803118" << endl;
-}
-
 Values func(Values current)
 {
     /*Equations are : 
@@ -60,14 +53,11 @@ Values func(Values current)
 
 void printSolution(Values ans)
 {
-    cout << "The solution of the equations " << endl
-         << endl;
+    cout << "The solution of the equations " << endl;
     cout << "20x + y - 2z = 17" << endl;
     cout << "3x + 20y - z = -18" << endl;
     cout << "2x - 3y + 20z = 25" << endl;
-    cout << endl
-         << "using Jacobi Method is " << endl
-         << endl;
+    cout << "using Jacobi Method is " << endl;
     cout << "x = ";
     cout << fixed << setprecision(precision) << ans.x << endl;
     cout << "y = ";

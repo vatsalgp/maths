@@ -18,21 +18,11 @@ float func(float x)
 	return (pow(x, 3) - 2 * x - 5);
 }
 
-void printInfo()
-{
-	cout << "Vatsal Gupta" << endl;
-	cout << "4th Sem" << endl;
-	cout << "03520803118" << endl;
-}
-
 void printSolution(float a, float b)
 {
-	printInfo();
-
 	cout << "a = " << a << endl;
 	cout << "b = " << b << endl;
-	cout << "f(x) = " << func(a) << endl
-		 << endl;
+	cout << "f(x) = " << func(a) << endl;
 	cout << "The solution of the equation ";
 	cout << "x^3 - 2x - 5 = 0 using bisection method is" << endl;
 	cout << "x = ";
