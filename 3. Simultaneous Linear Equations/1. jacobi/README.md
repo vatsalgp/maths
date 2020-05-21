@@ -1,5 +1,6 @@
 # Steps:
 1. Express them in the form: 
+
 x = K1 + L1y + M1z
 
 y = K2 + L2x + M2z
